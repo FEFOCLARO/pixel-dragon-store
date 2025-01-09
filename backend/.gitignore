@@ -1,0 +1,45 @@
+# Node.js
+# A pasta node_modules contém todas as dependências instaladas via npm
+# Ela não deve ir para o GitHub porque:
+# 1. É muito grande
+# 2. Pode ser recriada com npm install
+# 3. Pode conter arquivos específicos do sistema operacional
+node_modules/
+
+# Arquivos de ambiente
+# Arquivos .env contêm informações sensíveis como:
+# - Senhas
+# - Chaves de API
+# - Configurações de banco de dados
+# NUNCA devem ir para o GitHub!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+# Arquivos de log são gerados automaticamente e não precisam ser versionados
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de build/produção
+# São gerados quando você prepara o app para produção
+# Podem ser recriados a qualquer momento
+/build
+/dist
+
+# Arquivos do sistema operacional
+# São arquivos criados automaticamente pelo seu sistema
+# Não têm relação com seu código
+.DS_Store    # MacOS
+Thumbs.db    # Windows
+
+# Arquivos da IDE/Editor
+# Configurações específicas do seu editor de código
+# Outros desenvolvedores podem usar editores diferentes
+.vscode/
+.idea/
+*.swp
+*.swo
