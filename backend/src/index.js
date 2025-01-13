@@ -15,6 +15,18 @@ const app = express();
 // Se não encontrar, usa 3001 como valor padrão
 const PORT = process.env.PORT || 3001;
 
+// Importamos o arquivo de conexão ao banco de dados
+const db = require('./database');
+
+// Testamos uma consulta simples para garantir que a conexão está funcionando
+db.query('SELECT 1 + 1 AS solution', (err, results) => {
+    if (err) {
+        console.error('Erro ao executar a consulta:', err.message);
+        return;
+    }
+    console.log('A consulta de teste retornou:', results[0].solution); // Deve imprimir 2
+})
+
 // Configuramos os middlewares
 // Middlewares são funções que processam as requisições antes delas chegarem às rotas
 

@@ -1,0 +1,158 @@
+/* Estilos base do header */
+.header {
+    /* Fixamos o header no topo da página */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Garantimos que o header fique sobre outros elementos */
+    z-index: 1000;
+    /* Fundo com gradiente elegante */
+    background: linear-gradient(to right, #1a1a1a, #333);
+    /* Sombra suave para dar profundidade */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container que centraliza e limita a largura do conteúdo */
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos do logo e título */
+.header__logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header__logo-icon {
+    font-size: 2rem;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* Texto com gradiente dourado */
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilos da navegação principal */
+.header__nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+/* Efeito de linha animada sob os links */
+.header__nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+.header__nav-link:hover:after {
+    width: 100%;
+}
+
+/* Estilos do botão do carrinho */
+.header__cart-button {
+    background: #FFD700;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.header__cart-button:hover {
+    background: #FFA500;
+    transform: translateY(-2px);
+}
+
+/* Botão do menu mobile (inicialmente escondido) */
+.header__mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Menu mobile (inicialmente escondido) */
+.header__mobile-menu {
+    display: none;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    /* Em telas menores, escondemos a navegação principal */
+    .header__nav {
+        display: none;
+    }
+
+    /* E mostramos o botão do menu mobile */
+    .header__mobile-menu-button {
+        display: block;
+    }
+
+    /* Estilizamos o menu mobile quando visível */
+    .header__mobile-menu {
+        display: block;
+        background: #1a1a1a;
+        padding: 1rem;
+    }
+
+    .header__mobile-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header__mobile-nav-item {
+        padding: 0.5rem 0;
+    }
+
+    .header__mobile-nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    /* Ajustamos o título para caber em telas menores */
+    .header__title {
+        font-size: 1.2rem;
+    }
+}

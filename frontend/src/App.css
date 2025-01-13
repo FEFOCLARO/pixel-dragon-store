@@ -1,0 +1,16 @@
+.App {
+    /* Isso garante que o App ocupe toda a altura da tela */
+    min-height: 100vh;
+    /* Isso ajuda a organizar o conteúdo verticalmente */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-content {
+    /* Isso dá espaço para o Header fixo no topo */
+    margin-top: 80px; /* Ajuste este valor de acordo com a altura do seu Header */
+    /* Isso faz o conteúdo ocupar todo o espaço restante */
+    flex: 1;
+    /* Isso adiciona um pouco de espaço nas laterais */
+    padding: 20px;
+  }
